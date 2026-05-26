@@ -12,10 +12,13 @@
   .header h1{font-size:1.9rem;font-weight:800;line-height:1.3;margin-bottom:10px;}
   .header h1 span{color:#25D366;}
   .header p{color:#8b949e;font-size:.95rem;max-width:520px;margin:0 auto;}
-  .plans{display:flex;gap:20px;max-width:900px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
-  .card{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:30px 24px;flex:1;min-width:240px;max-width:280px;display:flex;flex-direction:column;position:relative;transition:.2s;}
+  .plans{display:flex;gap:20px;max-width:960px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+  .card{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:30px 24px;flex:1;min-width:260px;max-width:300px;display:flex;flex-direction:column;position:relative;transition:.2s;}
   .card.destacado{border-color:#25D366;box-shadow:0 0 0 1px #25D366;}
-  .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#25D366;color:#000;font-size:.72rem;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap;}
+  .card.premium{border-color:#3b82f6;box-shadow:0 0 0 1px #3b82f6;}
+  .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap;}
+  .badge-green{background:#25D366;color:#000;}
+  .badge-blue{background:#3b82f6;color:#fff;}
   .plan-name{font-size:.8rem;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;}
   .plan-price{font-size:2rem;font-weight:800;color:#e6edf3;line-height:1;margin-bottom:4px;}
   .plan-price span{font-size:.85rem;font-weight:400;color:#8b949e;}
@@ -25,13 +28,18 @@
   .features li::before{content:'✓';color:#25D366;font-weight:700;flex-shrink:0;margin-top:1px;}
   .features li.dim{color:#6e7681;}
   .features li.dim::before{content:'—';color:#30363d;}
+  .features li.highlight{color:#60a5fa;font-weight:700;}
+  .features li.highlight::before{content:'✦';color:#3b82f6;}
   .cta{display:block;text-align:center;padding:13px 20px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;transition:.2s;cursor:pointer;}
   .cta-main{background:#25D366;color:#000;}
   .cta-main:hover{background:#1fbc5a;}
   .cta-outline{background:transparent;color:#25D366;border:2px solid #25D366;}
   .cta-outline:hover{background:#25D36615;}
+  .cta-premium{background:linear-gradient(135deg,#1565c0,#3b82f6);color:#fff;border:none;}
+  .cta-premium:hover{opacity:.9;}
   .footer{text-align:center;margin-top:50px;color:#6e7681;font-size:.82rem;}
   .footer strong{color:#8b949e;}
+  .wa-tag{display:inline-flex;align-items:center;gap:6px;background:#25D36615;border:1px solid #25D36630;color:#25D366;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;margin-top:6px;}
   @media(max-width:640px){
     .header h1{font-size:1.5rem;}
     .plans{flex-direction:column;align-items:center;}
@@ -60,49 +68,51 @@
       <li>Control de vehículos disponibles / ocupados</li>
       <li>Registro de pagos recibidos</li>
       <li>1 usuario</li>
+      <li class="dim">IA Asistente</li>
       <li class="dim">Agenda de reservas</li>
       <li class="dim">Control de mantenimientos</li>
-      <li class="dim">Informes de rentabilidad</li>
-      <li class="dim">Alertas de vencimiento</li>
+      <li class="dim">WhatsApp integrado</li>
     </ul>
-    <a class="cta cta-outline" href="https://wa.me/595981153477?text=Hola%20Carlos%2C%20vi%20los%20planes%20de%20alquiler%20y%20me%20interesa%20el%20Plan%20B%C3%A1sico%20(Gs.%20250.000%2Fmes).%20%C2%BFPodemos%20coordinar%3F" target="_blank">Quiero este plan</a>
+    <a class="cta cta-outline" href="https://wa.me/595981153477?text=Hola%2C%20vi%20los%20planes%20de%20alquiler%20y%20me%20interesa%20el%20Plan%20B%C3%A1sico%20(Gs.%20250.000%2Fmes).%20%C2%BFPodemos%20coordinar%3F" target="_blank">Quiero este plan</a>
   </div>
 
   <!-- ESTANDAR -->
   <div class="card destacado">
-    <div class="badge">MAS ELEGIDO</div>
+    <div class="badge badge-green">MÁS ELEGIDO</div>
     <div class="plan-name">Plan Estándar</div>
-    <div class="plan-price">Gs. 450.000<span>/mes</span></div>
+    <div class="plan-price">Gs. 500.000<span>/mes</span></div>
     <div class="plan-desc">Para flotas de 5 a 20 vehículos con movimiento diario</div>
     <ul class="features">
       <li>Todo lo del Plan Básico</li>
       <li>Agenda de reservas con calendario visual</li>
       <li>Control de mantenimientos por vehículo</li>
       <li>Informes de rentabilidad por unidad</li>
-      <li>Historial completo de contratos por cliente</li>
+      <li>Historial completo por cliente</li>
       <li>3 usuarios</li>
-      <li class="dim">Control por sucursal o agente</li>
-      <li class="dim">Gestión de choferes asignados</li>
+      <li class="highlight">🤖 IA Asistente — registrá con texto libre</li>
+      <li class="dim">WhatsApp integrado</li>
       <li class="dim">Alertas automáticas de vencimiento</li>
     </ul>
-    <a class="cta cta-main" href="https://wa.me/595981153477?text=Hola%20Carlos%2C%20vi%20los%20planes%20de%20alquiler%20y%20me%20interesa%20el%20Plan%20Est%C3%A1ndar%20(Gs.%20450.000%2Fmes).%20%C2%BFPodemos%20coordinar%3F" target="_blank">Quiero este plan</a>
+    <a class="cta cta-main" href="https://wa.me/595981153477?text=Hola%2C%20vi%20los%20planes%20de%20alquiler%20y%20me%20interesa%20el%20Plan%20Est%C3%A1ndar%20(Gs.%20500.000%2Fmes).%20%C2%BFPodemos%20coordinar%3F" target="_blank">Quiero este plan</a>
   </div>
 
   <!-- PREMIUM -->
-  <div class="card">
+  <div class="card premium">
+    <div class="badge badge-blue">MÁXIMO CONTROL</div>
     <div class="plan-name">Plan Premium</div>
-    <div class="plan-price">Gs. 750.000<span>/mes</span></div>
-    <div class="plan-desc">Para flotas grandes o empresas con varias sucursales</div>
+    <div class="plan-price">Gs. 1.100.000<span>/mes</span></div>
+    <div class="plan-desc">IA + WhatsApp integrado — mandás un mensaje y listo</div>
     <ul class="features">
       <li>Todo lo del Plan Estándar</li>
       <li>Control por sucursal o agente de ventas</li>
       <li>Gestión de choferes asignados por contrato</li>
       <li>Alertas automáticas: seguro, VTV, mantenimiento</li>
       <li>Balance mensual consolidado</li>
-      <li>Acceso desde celular y notebook (web)</li>
       <li>Usuarios ilimitados</li>
+      <li class="highlight">🤖 IA Chat dentro de la app</li>
+      <li class="highlight">💬 WhatsApp integrado — sin abrir la app</li>
     </ul>
-    <a class="cta cta-outline" href="https://wa.me/595981153477?text=Hola%20Carlos%2C%20vi%20los%20planes%20de%20alquiler%20y%20me%20interesa%20el%20Plan%20Premium%20(Gs.%20750.000%2Fmes).%20%C2%BFPodemos%20coordinar%3F" target="_blank">Quiero este plan</a>
+    <a class="cta cta-premium" href="https://wa.me/595981153477?text=Hola%2C%20vi%20los%20planes%20de%20alquiler%20y%20me%20interesa%20el%20Plan%20Premium%20(Gs.%201.100.000%2Fmes).%20%C2%BFPodemos%20coordinar%3F" target="_blank">Quiero este plan</a>
   </div>
 
 </div>
